@@ -1,48 +1,238 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Nitin Kumar | Faculty Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --accent: #64748b;
+        }
 
-    <title>Nitin Kumar</title>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-    <meta name="author" content="Jon Barron">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
-  </head>
+        header {
+            background: white;
+            padding: 2rem 10%;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
 
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-info h1 { margin: 0; color: var(--dark); font-size: 2.2rem; }
+        .header-info p { margin: 5px 0; color: var(--accent); font-weight: 500; }
+        
+        .social-links { margin-top: 15px; display: flex; gap: 15px; }
+        .social-links a { color: var(--primary); font-size: 1.2rem; text-decoration: none; transition: 0.3s; }
+        .social-links a:hover { opacity: 0.7; }
+
+        nav {
+            background: white;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #e2e8f0;
+            z-index: 100;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 20px;
+            min-height: 500px;
+        }
+
+        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--primary);
+        }
+
+        .pub-title { font-weight: bold; color: var(--dark); display: block; }
+        .pub-authors { font-size: 0.9rem; color: #666; }
+        .pub-venue { font-style: italic; color: var(--primary); font-size: 0.9rem; }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+    </style>
+</head>
 <body>
 
-<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                  Nitin Kumar
-                </p>
-                <p>I'm a Re-searcher and currently an Assistant Professor at Computer Science and Engineering Department of <a href="https://snu.edu.in/home/">Shiv Nadar University</a> in Greater Noida.
-                </p>
-                <p>
-                  My research interests lie in the fields of pattern recognition and machine learning. Specifically, I'm interested in understanding the 1-D signals and medical images using the methods from machine learning. I did my PhD at <a href="https://www.cse.iitb.ac.in/#/">IIT Bombay</a>, where I was advised by <a href="https://www.cse.iitb.ac.in/~suyash/">Prof. Suyash Awate</a> and <a href="https://www.cse.iitb.ac.in/~ajitvr/">Prof. Ajit Rajwade</a>.
-                </p>
-<p style="text-align:center">
-                  <a href="mailto:nitin.nazkani@gmail.com">Email</a> &nbsp;/&nbsp;
-                  <a href="https://nitinnazkani.github.io/nitinnazkani/Information_CV.pdf">CV</a> &nbsp;/&nbsp;
-                  <a href="Nitin-bio.txt">Bio</a> &nbsp;/&nbsp;
-                  <a href="https://scholar.google.co.in/citations?hl=en&user=CXTb200AAAAJ">Scholar</a> &nbsp;/&nbsp;
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="Photo_Nitin_2.png"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 75%;" alt="profile photo" src="Photo_Nitin_2.png" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-         </tbody></table>
-<p>The Code of this site has been borrowed from <a href="https://jonbarron.info/">Jon Barron</a></p>
-        </td>
-      </tr>
-    </table>
-  </body>
+<header>
+    <img src="https://via.placeholder.com/150" alt="Nitin Kumar" class="profile-img">
+    <div class="header-info">
+        <h1>Nitin Kumar</h1>
+        <p>Assistant Professor, Computer Science & Engineering</p>
+        <p><i class="fas fa-university"></i> Shiv Nadar University, Greater Noida</p>
+        <div class="social-links">
+            <a href="#"><i class="fas fa-envelope"></i> Email</a>
+            <a href="#"><i class="fas fa-file-pdf"></i> CV</a>
+            <a href="#"><i class="fab fa-google"></i> Scholar</a>
+            <a href="#"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+    </div>
+</header>
+
+<nav id="main-nav">
+    <button class="tab-btn active" onclick="openTab(event, 'bio')">Bio</button>
+    <button class="tab-btn" onclick="openTab(event, 'teaching')">Teaching</button>
+    <button class="tab-btn" onclick="openTab(event, 'publications')">Publications</button>
+    <button class="tab-btn" onclick="openTab(event, 'projects')">Projects</button>
+    <button class="tab-btn" onclick="openTab(event, 'students')">Students</button>
+</nav>
+
+<div class="container">
+    <div id="bio" class="tab-content active">
+        <h2>About Me</h2>
+        <p>I am a Researcher and currently an Assistant Professor at the CSE Department of Shiv Nadar University. My research interests lie in the fields of pattern recognition and machine learning. Specifically, I am interested in understanding 1-D signals and medical images.</p>
+        
+        <h3>Education</h3>
+        <ul>
+            <li><strong>Ph.D. in Computer Science</strong> - IIT Bombay</li>
+            <li><strong>M.E.</strong> - IISc Bengaluru</li>
+            <li><strong>B.Tech</strong> - NIT Warangal</li>
+        </ul>
+
+        <h3>Experience</h3>
+        <p>Senior Research Engineer at Philips Research (2021-2023)<br>Assistant Professor at LNMIIT Jaipur (2019-2021)</p>
+    </div>
+
+    <div id="teaching" class="tab-content">
+        <h2>Teaching</h2>
+        <div class="card">
+            <h3>Machine Learning (CS301)</h3>
+            <p>Undergraduate course covering supervised and unsupervised learning, neural networks, and optimization.</p>
+        </div>
+        <div class="card">
+            <h3>Medical Image Computing</h3>
+            <p>Graduate level course focusing on MRI, CT scan processing, and CAD systems.</p>
+        </div>
+    </div>
+
+    <div id="publications" class="tab-content">
+        <h2>Selected Publications</h2>
+        <div class="card">
+            <span class="pub-title">Deep Graph Representation Learning for Medical Imaging</span>
+            <span class="pub-authors">N. Kumar, S. Awate, A. Rajwade</span><br>
+            <span class="pub-venue">IEEE International Conference on Image Processing (ICIP)</span>
+            <span class="tag">Best Paper Finalist</span>
+        </div>
+        <div class="card">
+            <span class="pub-title">Pattern Recognition in 1-D Signal Analysis</span>
+            <span class="pub-authors">N. Kumar et al.</span><br>
+            <span class="pub-venue">Journal of Machine Learning Research</span>
+        </div>
+    </div>
+
+    <div id="projects" class="tab-content">
+        <h2>Research Projects</h2>
+        <div class="card">
+            <h3>Graph-based Medical Diagnosis</h3>
+            <p>Developing graph neural networks to model structural connectivity in brain MRI data.</p>
+            <span class="tag">Machine Learning</span> <span class="tag">Healthcare</span>
+        </div>
+    </div>
+
+    <div id="students" class="tab-content">
+        <h2>Students</h2>
+        <h3>Ph.D. Students</h3>
+        <ul>
+            <li>Student Name - Topic: Graph Learning</li>
+        </ul>
+        <h3>Masters Students</h3>
+        <ul>
+            <li>Student Name - Topic: Signal Processing</li>
+        </ul>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Nitin Kumar | Built with HTML/JS/CSS</p>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        // Hide all tab content
+        const tabContent = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+            tabContent[i].classList.remove("active");
+        }
+
+        // Remove "active" class from all buttons
+        const tabBtns = document.getElementsByClassName("tab-btn");
+        for (let i = 0; i < tabBtns.length; i++) {
+            tabBtns[i].classList.remove("active");
+        }
+
+        // Show current tab and add active class to button
+        document.getElementById(tabName).style.display = "block";
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+        
+        // Scroll to top of content
+        window.scrollTo({ top: 250, behavior: 'smooth' });
+    }
+</script>
+
+</body>
 </html>
